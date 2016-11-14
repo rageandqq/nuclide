@@ -18,6 +18,12 @@ export class EmptyComponent extends React.Component {
     return (
       <div className="padded">
         <Button
+          onClick={() => this.runCommand('nuclide-new-project-wizard:open')}
+          icon="file-directory-create"
+          className="btn-block">
+          Create New Project
+        </Button>
+        <Button
           onClick={() => this.runCommand('application:add-project-folder')}
           icon="device-desktop"
           className="btn-block">

@@ -189,6 +189,10 @@ class FileTreeContextMenu {
 
     this._addContextMenuItemGroup([
       {
+        label: 'Create New Project',
+        command: 'nuclide-new-project-wizard:open',
+      },
+      {
         label: 'Add Project Folder',
         command: 'application:add-project-folder',
       },
