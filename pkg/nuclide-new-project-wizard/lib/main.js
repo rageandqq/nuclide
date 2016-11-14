@@ -19,6 +19,11 @@ import WizardComponent from './WizardComponent';
 let atomPanel: ?atom$Panel;
 let dialogComponent: ?React$Component<any, any, any>;
 
+export type ProjectType = {
+  value: number,
+  label: string,
+};
+
 class Activation {
   _disposables: UniversalDisposable;
 
@@ -37,6 +42,12 @@ class Activation {
   _openDialog(): void {
     const props = {
         onDismiss: this._closeDialog.bind(this),
+        // TODO(@rageandqq | 2016-14-11): Don't hardcode this! Receive from provider packages.
+        projectTypes: [
+          {value: 0, label: 'React App'},
+          {value: 1, label: 'Node JS App'},
+          {value: 2, label: 'MEAN Stack App'},
+        ],
     };
     const elem = document.createElement('div');
     atomPanel = atom.workspace.addModalPanel({item: elem});
